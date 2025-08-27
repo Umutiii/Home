@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Furniro Template</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        background: #fdfaf6;
+        color: #333;
+        line-height: 1.5;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      .container {
+        max-width: 1440px;
+        margin: 0 auto;
+      }
+
+      header {
+        background: #fff;
+        padding: 15px 40px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      }
+
+      header .group {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1286px;
+        margin: 0 auto;
+      }
+
+      header .logo {
+        display: flex;
+        align-items: center;
+        font-size: 34px;
+        font-weight: bold;
+        color: #333;
+      }
+
+      header .logo img {
+        width: 50px;
+        height: 32px;
+        margin-right: 10px;
+      }
+
+      header nav {
+        display: flex;
+        align-items: center;
+        flex: 1;
+        justify-content: center; /* Ortalamak için */
+        position: relative;
+        padding-right: 150px; /* İkonlar için sağ boşluk */
+      }
+
+      header nav ul {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        gap: 50px;
+      }
+
+      header nav ul li a {
+        text-decoration: none;
+        color: #333;
+        font-weight: 500;
+        transition: color 0.3s;
+      }
+
+      header nav ul li a:hover {
+        color: #c59d5f;
+      }
+
+      header .icons {
+        display: flex;
+        align-items: center;
+        gap: 45px;
+        position: absolute;
+        right: 45px;
+      }
+
+      header .icons a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        transition: transform 0.2s ease;
+      }
+
+      header .icons a:hover {
+        transform: scale(1.1); /* Hover efektiyle hafif büyüme */
+      }
+
+      header .icons img {
+        width: 24px; /* Tüm ikonlar için sabit boyut */
+        height: 24px;
+        display: block;
+      }
+
+      /* HERO SECTION */
+      .hero {
+        position: relative;
+        background: #fff;
+        padding: 0;
+      }
+
+      .hero-img {
+        position: relative;
+      }
+
+      .hero-img img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      /* Hero kutusu artık görselin üzerinde olacak */
+      .hero-text.hero-box {
+        position: absolute;
+        top: 253px;
+        right: 10px;
+        transform: translate(-7.5%, 17%);
+        background: #fbeedb;
+        padding: 40px;
+
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        width: 643px;
+        height: 443px;
+        text-align: left;
+      }
+
+      .hero-text.hero-box small {
+        font-size: 0.75rem;
+        font-weight: 500;
+        color: #7d6b3d;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 10px;
+        display: inline-block;
+      }
+
+      .hero-text.hero-box h1 {
+        font-size: 52px;
+        font-weight: 700;
+        line-height: 65px;
+        letter-spacing: 0px;
+        color: #b88e2f;
+        margin-bottom: 10px;
+      }
+
+      .hero-text.hero-box p {
+        color: #333333;
+        font-size: 18px;
+        margin-bottom: 40px;
+        line-height: 24px;
+      }
+      .hero-text.hero-box span {
+        color: #333333;
+        font-size: 16px;
+        font-weight: 600;
+        letter-spacing: 3px;
+        margin-top: 40px;
+        margin-bottom: 30px;
+        line-height: 100%;
+      }
+
+      .hero-text.hero-box button {
+        background: #b88e2f;
+        color: #fff;
+        width: 222px;
+        height: 74px;
+        top: 585px;
+        left: 778px;
+        border: none;
+        opacity: 1;
+        padding-top: 25px;
+        padding-right: 72px;
+        padding-bottom: 25px;
+        padding-left: 72px;
+        gap: 10px;
+        font-family: Poppins;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 100%;
+        letter-spacing: 0px;
+        text-transform: uppercase;
+      }
+
+      /* BROWSE */
+      .browse {
+        text-align: center;
+        padding: 40px 20px;
+      }
+
+      .browse-grid {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        margin-top: 20px;
+      }
+
+      .browse-grid .item {
+        text-align: center;
+        text-decoration: none;
+        color: inherit;
+        transition: transform 0.3s ease;
+      }
+
+      .browse-grid .item img {
+        max-width: 100%;
+        border-radius: 10px;
+        display: block;
+      }
+
+      .browse-grid .item p {
+        margin-top: 10px;
+        font-size: 18px;
+        color: #333;
+        font-weight: 500;
+      }
+
+      .browse-grid .item:hover {
+        transform: translateY(-5px);
+      }
+
+      /* PRODUCTS */
+      .products {
+        padding: 60px 80px;
+        background: #fff;
+        text-align: center;
+      }
+      .products h2 {
+        font-size: 2rem;
+        margin-bottom: 10px;
+      }
+      .products p {
+        font-size: 1rem;
+        color: #555;
+        margin-bottom: 10px;
+      }
+      .product-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+      }
+      .product-card {
+        background: #f9f9f9;
+        overflow: hidden;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .product-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      }
+      .product-card img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+      .product-info {
+        padding: 15px;
+        text-align: left;
+      }
+      .product-title {
+        font-size: 1.25rem;
+        margin-bottom: 10px;
+        color: #333;
+      }
+      .product-desc {
+        font-size: 0.9rem;
+        color: #777;
+      }
+      .product-price {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: #bfa65a;
+      }
+
+      .show-more-container {
+        text-align: center;
+
+        margin-top: 30px;
+      }
+
+      .show-more {
+        background-color: #ffffff;
+        color: #bfa65a;
+        border: #bfa65a solid 1px;
+        width: 200px;
+        padding: 12px 30px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+      }
+
+      .show-more:hover {
+        background-color: #bfa65a;
+        color: #ffffff;
+      }
+
+      /* INSPIRATION */
+      .inspiration {
+        padding: 60px 80px;
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        background: #fcf8f3;
+        border-radius: 12px;
+        margin-bottom: 60px;
+      }
+
+      .inspiration-text {
+        flex: 1;
+      }
+
+      .inspiration-text h2 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+      }
+
+      .inspiration-text button {
+        margin-top: 20px;
+        width: 160px;
+        padding: 12px 20px;
+        font-size: 16px;
+        background: #bfa65a;
+        color: #fff;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        font-weight: 600;
+      }
+
+      .inspiration-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        flex: 1;
+      }
+
+      .inspiration-grid img {
+        width: 404px;
+        height: 582px;
+      }
+
+      /* INSTAGRAM */
+      .instagram {
+        padding: 60px 80px;
+        text-align: center;
+        background-color: #fff;
+      }
+
+      .instagram p {
+        font-size: 1rem;
+        color: #555;
+      }
+
+      .instagram h2 {
+        font-size: 2rem;
+        margin: 10px 0 40px;
+      }
+
+      .instagram-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 10px;
+      }
+
+      .instagram-grid img {
+        width: 100%;
+        border-radius: 8px;
+        display: block;
+      }
+
+      /* FOOTER */
+      footer {
+        background: #fff;
+        padding: 50px 20px 20px;
+        font-family: "Arial", sans-serif;
+        color: #333;
+        font-size: 14px;
+        border-top: 1px solid #eee;
+      }
+
+      .footer-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        max-width: 1200px;
+        margin: 0 auto;
+        gap: 40px;
+      }
+
+      footer .col {
+        flex: 1;
+        min-width: 180px;
+      }
+
+      footer h4 {
+        font-size: 16px;
+        font-weight: 600;
+        margin-bottom: 40px;
+        color: #9F9F9F;
+      }
+
+      footer h2 {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 30px;
+        color: #333;
+      }
+
+      footer p {
+        color: #999;
+        line-height: 1.5;
+        font-size: 14px;
+      }
+
+      footer a {
+        display: block;
+        text-decoration: none;
+        color: #000;
+        margin-bottom: 30px;
+        transition: color 0.3s;
+      }
+
+      footer a:hover {
+        color: #c59d5f;
+      }
+
+      .newsletter-box {
+        display: flex;
+        margin-top: 10px;
+      }
+
+      .newsletter input {
+        flex: 1;
+        padding: 8px 10px;
+        border: none;
+        border-bottom: 1px solid #000;
+        background: transparent;
+        outline: none;
+        font-size: 14px;
+      }
+
+      .newsletter button {
+        background: transparent;
+        border: none;
+        font-weight: 700;
+        cursor: pointer;
+        margin-left: 10px;
+        border-bottom: 1px solid #000;
+        transition: color 0.3s;
+      }
+
+      .newsletter button:hover {
+        color: #c59d5f;
+      }
+
+      footer .copyright {
+        text-align: start;
+        margin-left: 80px;
+        margin-top: 40px;
+        color: #000000;
+        font-size: 13px;
+        border-top: 1px solid #eee;
+        padding-top: 30px;
+      }
+
+      /* RESPONSIVE */
+      @media (max-width: 1200px) {
+        .hero {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .hero-text,
+        .hero-img {
+          max-width: 100%;
+        }
+
+        .browse-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .product-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .inspiration {
+          flex-direction: column;
+        }
+
+        .inspiration-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .instagram-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+
+      @media (max-width: 768px) {
+        .browse-grid,
+        .product-grid,
+        .inspiration-grid,
+        .instagram-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 480px) {
+        header {
+          flex-direction: column;
+          gap: 15px;
+        }
+
+        nav ul {
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 10px;
+        }
+
+        .instagram-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="group">
+          <div class="logo">
+            <img src="img/Meubel House_Logos-05.png" alt="" />Furniro
+          </div>
+          <nav>
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Shop</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+            <div class="icons">
+              <a href="#"><img src="img/kullanici.png" alt="User" /></a>
+              <a href="#"><img src="img/arama.png" alt="Search" /></a>
+              <a href="#"><img src="img/begen.png" alt="heart" /></a>
+              <a href="#"><img src="img/sepet.png" alt="cart" /></a>
+            </div>
+          </nav>
+        </div>
+      </header>
+
+      <section class="hero">
+        <div class="hero-img">
+          <img src="img/chair.jpg" alt="Hero Background" />
+          <div class="hero-text hero-box">
+            <span>New Arrival</span>
+            <h1>Discover Our <br />New Collection</h1>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
+              tellus, luctus nec ullamcorper mattis.
+            </p>
+            <button>Buy Now</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Browse -->
+      <section class="browse">
+        <h2>Browse The Range</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <div class="browse-grid">
+          <a href="#" class="item">
+            <img src="img/image 1.png" alt="Dining" />
+            <p>Dining</p>
+          </a>
+          <a href="#" class="item">
+            <img src="img/image 2.png" alt="Living" />
+            <p>Living</p>
+          </a>
+          <a href="#" class="item">
+            <img src="img/image 3.png" alt="Bedroom" />
+            <p>Bedroom</p>
+          </a>
+        </div>
+      </section>
+
+      <!-- Products -->
+      <section class="products">
+        <h2>Our Products</h2>
+        <p>Check out our latest furniture collection.</p>
+        <div class="product-grid">
+          <div class="product-card">
+            <img src="img/image 1.png" alt="Product 1" />
+            <div class="product-info">
+              <h3 class="product-title">Product 1</h3>
+              <p class="product-desc">Modern and stylish dining chair.</p>
+              <p class="product-price">$ 400</p>
+            </div>
+          </div>
+          <div class="product-card">
+            <img src="img/image 2.png" alt="Product 2" />
+            <div class="product-info">
+              <h3 class="product-title">Product 2</h3>
+              <p class="product-desc">Comfortable and elegant sofa set.</p>
+              <p class="product-price">$ 350</p>
+            </div>
+          </div>
+          <div class="product-card">
+            <img src="img/image 3.png" alt="Product 3" />
+            <div class="product-info">
+              <h3 class="product-title">Product 3</h3>
+              <p class="product-desc">Stylish and cozy bedroom set.</p>
+              <p class="product-price">$ 450</p>
+            </div>
+          </div>
+          <div class="product-card">
+            <img src="img/image 5.png" alt="Product 4" />
+            <div class="product-info">
+              <h3 class="product-title">Product 4</h3>
+              <p class="product-desc">Elegant and modern coffee table.</p>
+              <p class="product-price">$ 250</p>
+            </div>
+          </div>
+          <div class="product-card">
+            <img src="img/image 6.png" alt="Product 4" />
+            <div class="product-info">
+              <h3 class="product-title">Product 4</h3>
+              <p class="product-desc">Elegant and modern coffee table.</p>
+              <p class="product-price">$ 550</p>
+            </div>
+          </div>
+          <div class="product-card">
+            <img src="img/image 7.png" alt="Product 4" />
+            <div class="product-info">
+              <h3 class="product-title">Product 4</h3>
+              <p class="product-desc">Elegant and modern coffee table.</p>
+              <p class="product-price">$ 550</p>
+            </div>
+          </div>
+          <div class="product-card">
+            <img src="img/image 8.png" alt="Product 4" />
+            <div class="product-info">
+              <h3 class="product-title">Product 4</h3>
+              <p class="product-desc">Elegant and modern coffee table.</p>
+              <p class="product-price">$ 500</p>
+            </div>
+          </div>
+          <div class="product-card">
+            <img src="img/Images.png" alt="Product 4" />
+            <div class="product-info">
+              <h3 class="product-title">Product 4</h3>
+              <p class="product-desc">Elegant and modern coffee table.</p>
+              <p class="product-price">$ 5000</p>
+            </div>
+          </div>
+          <!-- // Show more button -->
+          <div class="show-more-container">
+            <button class="show-more">Show More</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Inspiration -->
+      <section class="inspiration">
+        <div class="inspiration-text">
+          <h2>50+ Beautiful rooms inspiration</h2>
+          <p>Explore our gallery for beautiful room ideas.</p>
+          <button>Explore More</button>
+        </div>
+        <div class="inspiration-grid">
+          <img src="img/Image.png" alt="Inspiration 1" />
+          <img src="img/Rectangle 25.png" alt="Inspiration 2" />
+        </div>
+      </section>
+
+      <!-- Instagram -->
+      <section class="instagram">
+        <p>Share your setup with</p>
+        <h2>#FurniroFurniture</h2>
+        <div class="instagram-grid">
+          <img src="img/112.png" alt="1" />
+          <img src="img/113.png" alt="2" />
+          <img src="img/114.png" alt="3" />
+          <img src="img/115.png" alt="4" />
+          <img src="img/116.png" alt="5" />
+          <img src="img/117.png" alt="6" />
+          <img src="img/118.png" alt="7" />
+          <img src="img/119.png" alt="8" />
+          <img src="img/120.png" alt="9" />
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer>
+        <div class="footer-container">
+          <div class="col">
+            <h2>Furniro.</h2>
+            <p>
+              400 University Drive Suite 200 Coral Gables,<br />FL 33134 USA
+            </p>
+          </div>
+          <div class="col">
+            <h4>Links</h4>
+            <a href="#">Home</a>
+            <a href="#">Shop</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+          </div>
+          <div class="col">
+            <h4>Help</h4>
+            <a href="#">Payment Options</a>
+            <a href="#">Returns</a>
+            <a href="#">Privacy Policies</a>
+          </div>
+          <div class="col newsletter">
+            <h4>Newsletter</h4>
+            <div class="newsletter-box">
+              <input type="email" placeholder="Enter Your Email Address" />
+              <button>Subscribe</button>
+            </div>
+          </div>
+        </div>
+        <div class="copyright">2023 Furniro. All rights reserved.</div>
+      </footer>
+    </div>
+
+    <script>
+      document.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", function (event) {
+          event.preventDefault();
+          alert("Link clicked: " + this.textContent);
+        });
+      });
+    </script>
+  </body>
+</html>
